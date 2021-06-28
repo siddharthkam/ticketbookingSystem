@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.ticketmanagement.ticketbookingSystem.model.Ticket;
 import com.ticketmanagement.ticketbookingSystem.repositoryLayer.TicketRepository;
 
-
 @Service
 public class TicketServiceImpl implements TicketService {
 
@@ -24,16 +23,23 @@ public class TicketServiceImpl implements TicketService {
 
 	@Override
 	public Ticket getTicket(int id) {
-		if(ticketrepository.findById(id).isPresent())
-		return ticketrepository.findById(id).get();
-		else 
-		return null;
-    
+		if (ticketrepository.findById(id).isPresent())
+			return ticketrepository.findById(id).get();
+		else
+			return null;
+
 	}
 
 	@Override
 	public List<Ticket> getAllTicket() {
 		return (List<Ticket>) ticketrepository.findAll();
+	}
+
+	@Override
+	public Ticket modifyTicket(Ticket ticket) {
+
+		return ticketrepository.save(ticket);
+
 	}
 
 }

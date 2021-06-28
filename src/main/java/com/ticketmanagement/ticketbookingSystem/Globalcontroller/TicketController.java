@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,6 +45,13 @@ public class TicketController {
 	{
 		List<Ticket> ticket1=TicketServiceImpl.getAllTicket();
 		return new ResponseEntity<>(ticket1, null,HttpStatus.OK);	
+	}
+	
+	@PutMapping("/user/modifybook")
+	public ResponseEntity<Ticket> modifyticket(@RequestBody Ticket ticket)
+	{
+		Ticket ticket1=TicketServiceImpl.modifyTicket(ticket);
+		return new ResponseEntity<Ticket>(ticket1, null,HttpStatus.OK);
 	}
 
 }
