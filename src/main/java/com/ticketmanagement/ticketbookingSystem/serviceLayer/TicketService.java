@@ -10,5 +10,6 @@ public interface TicketService {
 	public Ticket addTicket(Ticket t);
 	public Ticket getTicket(int id);
 	public List<Ticket> getAllTicket();
+	public Ticket modifyTicket(Ticket t);
 
 }
