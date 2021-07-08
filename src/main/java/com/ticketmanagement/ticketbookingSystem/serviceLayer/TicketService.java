@@ -11,5 +11,7 @@ public interface TicketService {
 	public Ticket getTicket(int id);
 	public List<Ticket> getAllTicket();
 	public Ticket modifyTicket(Ticket t);
+	public List<Ticket> getAllTicketbyDestination(String destination);
+	List<Ticket> getAllTicketbyfair(double fare);
 
 }
