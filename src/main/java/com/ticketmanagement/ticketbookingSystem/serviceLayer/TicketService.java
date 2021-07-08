@@ -13,5 +13,6 @@ public interface TicketService {
 	public Ticket modifyTicket(Ticket t);
 	public List<Ticket> getAllTicketbyDestination(String destination);
 	List<Ticket> getAllTicketbyfair(double fare);
+	List<Ticket> findByTicketbydestinationquery(String destination);
 
 }

@@ -21,11 +21,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/user/allticket/**").hasAnyRole("ADMIN").and().formLogin().and().csrf().disable();
 		http.authorizeRequests().antMatchers("/user/ticketbydestination**").hasAnyRole("ADMIN").and().formLogin().and().csrf().disable();
 		http.authorizeRequests().antMatchers("/user/ticketbyid/**").hasAnyRole("ADMIN").and().formLogin().and().csrf().disable();
-	
-	
 	}
-	
-	
 	@Autowired
 	public void globalConfiguration(AuthenticationManagerBuilder auth) throws Exception{
 		auth.inMemoryAuthentication().withUser("USER").password("{noop}SIDDHARTH").roles("USER");
@@ -33,7 +29,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		auth.inMemoryAuthentication().withUser("SIDDHARTH1").password("{noop}PASSWORD").roles("USER");
 		auth.inMemoryAuthentication().withUser("SIDDHARTH2").password("{noop}PASSWORD").roles("USER");
 		auth.inMemoryAuthentication().withUser("SIDDHARTH3").password("{noop}PASSWORD").roles("USER","ADMIN");
-		
 	}
 
 }

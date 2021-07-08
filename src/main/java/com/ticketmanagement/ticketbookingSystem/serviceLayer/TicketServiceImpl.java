@@ -45,12 +45,18 @@ public class TicketServiceImpl implements TicketService {
 	public List<Ticket> getAllTicketbyfair(double fare) {
 		return (List<Ticket>) ticketrepository.findByTicketfareLessThan(fare);
 	}
+	
+	
+	@Override
+	public List<Ticket> findByTicketbydestinationquery(String destination) {
+		return (List<Ticket>) ticketrepository.findByTicketbydestinationquery(destination);
+	}
+
+	
 
 	@Override
 	public Ticket modifyTicket(Ticket ticket) {
-
 		return ticketrepository.save(ticket);
-
 	}
 
 }
