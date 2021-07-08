@@ -16,6 +16,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests().antMatchers("/user/ticket/**").hasAnyRole("USER").and().formLogin().and().csrf().disable();
 		http.authorizeRequests().antMatchers("/user/ticketbyfare/**").hasAnyRole("USER").and().formLogin().and().csrf().disable();
+		http.authorizeRequests().antMatchers("/user/ticketbydestination**").hasAnyRole("USER").and().formLogin().and().csrf().disable();
+		http.authorizeRequests().antMatchers("/user/ticketbydestination**").hasAnyRole("USER").and().formLogin().and().csrf().disable();
 		http.authorizeRequests().antMatchers("/user/allticket/**").hasAnyRole("ADMIN").and().formLogin().and().csrf().disable();
 		http.authorizeRequests().antMatchers("/user/ticketbydestination**").hasAnyRole("ADMIN").and().formLogin().and().csrf().disable();
 		http.authorizeRequests().antMatchers("/user/ticketbyid/**").hasAnyRole("ADMIN").and().formLogin().and().csrf().disable();
