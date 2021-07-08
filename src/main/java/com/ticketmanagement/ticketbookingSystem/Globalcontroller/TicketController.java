@@ -62,8 +62,8 @@ public class TicketController {
 		return new ResponseEntity<Ticket>(ticket1, null, HttpStatus.OK);
 	}
 	
-	@PutMapping("/user/destinationquery")
-	public ResponseEntity<List<Ticket>> findByTicketbydestinationquery(String destination) {
+	@PutMapping("/user/destinationquery/{destination}")
+	public ResponseEntity<List<Ticket>> findByTicketbydestinationquery(@PathVariable("destination") String destination) {
 		List<Ticket> tickes = TicketServiceImpl.findByTicketbydestinationquery(destination);
 		return new ResponseEntity<List<Ticket>>(tickes, null, HttpStatus.OK);
 	}
