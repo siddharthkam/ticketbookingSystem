@@ -12,6 +12,8 @@ public class TicketbookingSystemApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TicketbookingSystemApplication.class, args);
+		
+		
 	}
 
 }
