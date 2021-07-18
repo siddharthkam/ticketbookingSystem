@@ -1,6 +1,7 @@
 package com.ticketmanagement.ticketbookingSystem.Globalcontroller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,6 +41,10 @@ public class TicketController {
 	public ResponseEntity<List<Ticket>> getticket(@PathVariable("destination") String destination) {
 
 		List<Ticket> tickets = TicketServiceImpl.getAllTicketbyDestination(destination);
+
+		//List<Ticket> tickets2 = tickets.stream().filter(tickets1 -> tickets1.getDestination().equals("PUNE"))
+			//	.collect(Collectors.toList());
+
 		return new ResponseEntity<List<Ticket>>(tickets, null, HttpStatus.OK);
 	}
 
@@ -53,7 +58,11 @@ public class TicketController {
 	@GetMapping("/user/allticket")
 	public ResponseEntity<List<Ticket>> getallticket() {
 		List<Ticket> ticket1 = TicketServiceImpl.getAllTicket();
-		return new ResponseEntity<>(ticket1, null, HttpStatus.OK);
+		
+		List<Ticket> tickets2 = ticket1.stream().filter(tickets3 -> tickets3.getDestination().equals("PUNE"))
+			.collect(Collectors.toList());
+		
+		return new ResponseEntity<>(tickets2, null, HttpStatus.OK);
 	}
 
 	@PutMapping("/user/modifybook")
@@ -61,9 +70,10 @@ public class TicketController {
 		Ticket ticket1 = TicketServiceImpl.modifyTicket(ticket);
 		return new ResponseEntity<Ticket>(ticket1, null, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/user/destinationquery/{destination}")
-	public ResponseEntity<List<Ticket>> findByTicketbydestinationquery(@PathVariable("destination") String destination) {
+	public ResponseEntity<List<Ticket>> findByTicketbydestinationquery(
+			@PathVariable("destination") String destination) {
 		List<Ticket> tickes = TicketServiceImpl.findByTicketbydestinationquery(destination);
 		return new ResponseEntity<List<Ticket>>(tickes, null, HttpStatus.OK);
 	}
