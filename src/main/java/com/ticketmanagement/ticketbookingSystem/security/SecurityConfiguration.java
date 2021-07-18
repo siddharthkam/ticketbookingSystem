@@ -34,11 +34,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		auth.inMemoryAuthentication().withUser("SIDDHARTH5").password("{noop}PASSWORD").roles("USER","ADMIN");
 		auth.inMemoryAuthentication().withUser("SIDDHARTH16").password("{noop}PASSWORD").roles("USER","ADMIN");
 		auth.inMemoryAuthentication().withUser("SIDDHARTH17").password("{noop}PASSWORD").roles("USER","ADMIN");
+		auth.inMemoryAuthentication().withUser("SIDDHARTH18").password("{noop}PASSWORD").roles("USER","ADMIN");
 		
 		
 		auth.inMemoryAuthentication().withUser("SIDDHARTH6").password("{noop}PASSWORD").roles("USER","ADMIN");
 		auth.inMemoryAuthentication().withUser("SIDDHARTH7").password("{noop}PASSWORD").roles("USER","ADMIN");
 		auth.inMemoryAuthentication().withUser("SIDDHARTH8").password("{noop}PASSWORD").roles("USER","ADMIN");
+		auth.inMemoryAuthentication().withUser("SIDDHARTH9").password("{noop}PASSWORD").roles("USER","ADMIN");
 	
 		
 	}
