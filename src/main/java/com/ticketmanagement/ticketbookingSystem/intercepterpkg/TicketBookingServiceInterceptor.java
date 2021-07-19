@@ -22,8 +22,6 @@ public class TicketBookingServiceInterceptor implements HandlerInterceptor {
 			ModelAndView modelAndView) throws Exception {
 		
 		System.out.println("FIVE  SIX SEVEN  EIGHT");
-		System.out.println("FIVE  SIX SEVEN  EIGHT");
-		System.out.println("FIVE  SIX SEVEN  EIGHT");
 		HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
 	}
 
