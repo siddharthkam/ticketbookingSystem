@@ -24,6 +24,7 @@ public class CustomEndPoint {
 		releaseNoteMap.put("Version-1.0",Arrays.asList("Release First One","Release SECOND One"));
 		releaseNoteMap.put("Version-1.1",Arrays.asList("Release THIRD One","Release FOUR One"));
 		releaseNoteMap.put("Version-1.2",Arrays.asList("Release FIVE One","Release SIXTH One"));
+		releaseNoteMap.put("Version-1.3",Arrays.asList("Release FIVE One","Release SIXTH One"));
 	}
 	
 	@ReadOperation
